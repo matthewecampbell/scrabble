@@ -1,6 +1,15 @@
 class Scrabble
   def score(word)
-    0
+    score = 0
+    if word == nil
+      score = 0
+    else
+      letters = word.split(//)
+      letters.each do |letter|
+        score += point_values[letter.upcase]
+      end
+    end
+    score
   end
 
   def point_values
@@ -13,5 +22,9 @@ class Scrabble
       "U"=>1, "V"=>4, "W"=>4, "X"=>8,
       "Y"=>4, "Z"=>10
     }
+  end
+
+  def score_word
+
   end
 end
